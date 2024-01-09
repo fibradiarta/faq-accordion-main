@@ -1,0 +1,114 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: hsl(275, 100%, 97%);
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero > div.image::before {
+    content: url(./assets/images/background-pattern-desktop.svg);
+}
+    
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 530px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: -150px;
+    position: relative;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.heading {
+    display: flex;
+    gap: 20px;
+}
+
+.heading > h1 {
+    font-size: 46px;
+}
+
+.heading > img {
+    width: 32px;
+}
+
+.accordion {
+    display: flex;
+    padding: 20px 0;
+    border-top: solid 1px hsl(275, 100%, 97%);
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.accordion:first-child {
+    border-top: none;
+}
+
+.accordion::after {
+    content: url(./assets/images/icon-plus.svg);
+    position: absolute;
+    right: 1.5rem;
+}
+
+.accordion.active::after {
+    content: url(./assets/images/icon-minus.svg);
+}
+
+.accordion > p {
+    font-weight: 600;
+    font-size: 16px;
+    color: hsl(292, 42%, 14%);
+}
+
+.panel {
+    overflow: hidden;
+    transition: ease-out;
+    display: none;
+    padding: 10px 0 20px 0;
+}
+
+.panel > p {
+    color: hsl(292, 16%, 49%);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.2rem;
+}
+
+@media only screen and (max-width: 375px) {
+    .hero > div.image::before {
+        content: url(./assets/images/background-pattern-mobile.svg);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .card {
+        width: 350px;
+    }
+
+    .accordion {
+        width: 75%;
+    }
+}
+
